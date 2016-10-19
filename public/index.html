@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Liftit Test</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <header>
+    <input type="checkbox" id="toggle-menu">
+    <label for="toggle-menu" class="label-toggle-menu"><img src="images/hamburger.svg" width="32px"/></label>
+    <nav id="navbar" class="navbar"></nav>
+  </header>
+
+  <h1>¡Tú tranquilo!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <script type="text/javascript" src="js/render.js"></script>
+  <script type="text/javascript" src="js/request.js"></script>
+  <script type="text/javascript">
+    // Calling get method
+    h.get({
+      url: "http://localhost:3000/api/nav.json",
+      dataType: "json",
+      callback: drawNav
+    });
+  </script>
+</body>
+</html>

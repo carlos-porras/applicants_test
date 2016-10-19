@@ -1,0 +1,166 @@
+@import "fonts.css";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+/*General styles*/
+
+.navbar ul
+{
+  list-style: none;
+}
+
+.navbar ul li:hover{
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.navbar li a
+{
+  font-family: 'Abel';
+  font-size: 1.4rem;
+  line-height: 50px;
+  display: block;
+  position: relative;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.navbar li a i{
+  position: relative;
+}
+
+.navbar ul li a span{
+  float: right;
+  margin-left: 10px;
+  line-height: 50px;
+  font-size: 0.8rem;
+}
+
+/*Header Styles*/
+
+header {
+  background-color: rgb(41, 109, 190);
+  width: 100%;
+}
+
+#toggle-menu, .label-toggle-menu
+{
+  display: none;
+}
+
+.label-toggle-menu
+{
+  width: 35px;
+  height: 35px;
+  padding: 7px 5px;
+  border-right: 1px solid rgb(86, 151, 228);
+}
+
+.label-toggle-menu:hover
+{
+  cursor: pointer;
+  background-color: rgb(75, 140, 217);
+}
+
+/*Style navbar items*/
+
+.navbar .nav-items
+{
+  background-color: rgb(41, 109, 190);
+}
+
+.navbar .nav-items > li
+{
+  border-top: 1px solid rgb(86, 151, 228);
+  display: inline-block;
+  position: relative;
+}
+
+.navbar .nav-items > li:last-child
+{
+  border-bottom: 1px solid rgb(86, 151, 228);
+}
+
+/*Style navbar sub-items*/
+
+.navbar .nav-subitems li a span{
+  display: none;
+}
+
+.navbar .nav-subitems
+{
+  z-index: 1000;
+  position: absolute;
+  width: 180%;
+  max-height: 0;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  background-color: rgb(222, 104, 104);
+}
+
+.navbar .nav-subitems li
+{
+  border-top: 1px solid rgb(244, 149, 149);
+  overflow: hidden;
+  display: block;
+}
+
+.navbar .nav-subitems li:first-child
+{
+  border-top: none;
+}
+
+.navbar .nav-items li:hover .nav-subitems
+{
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+
+@media (max-width: 768px){
+
+  .label-toggle-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .navbar{
+    background-color: rgb(41, 109, 190);
+    position: fixed;
+    width: 80%;
+    left: -80%;
+    transition: all .5s;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+  }
+
+  #toggle-menu:checked ~ .navbar
+  {
+    left: 0;
+    transition: all .5s;
+  }
+
+  .navbar .nav-items li{
+    display: block;
+    position: relative;
+  }
+
+  .navbar .nav-subitems{
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+
+  .navbar .nav-subitems li a span{
+    display: block;
+    font-size: 0.3rem
+  }
+}
